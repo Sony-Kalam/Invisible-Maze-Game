@@ -1,14 +1,12 @@
 print("Welcome To Invisible Maze😃")
-answer=input("Is it first time your playing this game?(yes/no):").lower()
+answer=input("DO you wanted to know the Game Rules(yes/no):").lower()
 if answer=="yes":
-    print("GAME RULES-----")
     print("🤓 --> This is your current position in the maze.")
-    print("U have find the exit of the maze by moving up(u),down(d),left(l),right(r).")
+    print("U have to find the exit of the maze by moving up(u),down(d),left(l),right(r).")
     print("U have to enter the directions u,d,l,r to move...")
     print("Hope u find the way.Better Luck")
 else:
-    print("Then U already know the rules.")
-    print("So u may continue with the Game...")
+    print("You may continue with the Game...")
 print("enter 1/2/3:")
 print("1 for easy level")
 print("2 for medium level")
@@ -84,4 +82,5 @@ while True:
                 print("🤓",end=" ")
             else:
                 print("#",end=" ")
+
         print()
