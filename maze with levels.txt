@@ -1,0 +1,87 @@
+print("Welcome To Invisible Maze😃")
+answer=input("Is it first time your playing this game?(yes/no):").lower()
+if answer=="yes":
+    print("GAME RULES-----")
+    print("🤓 --> This is your current position in the maze.")
+    print("U have find the exit of the maze by moving up(u),down(d),left(l),right(r).")
+    print("U have to enter the directions u,d,l,r to move...")
+    print("Hope u find the way.Better Luck")
+else:
+    print("Then U already know the rules.")
+    print("So u may continue with the Game...")
+print("enter 1/2/3:")
+print("1 for easy level")
+print("2 for medium level")
+print("3 for difficult level")
+level=int(input())
+x,y=0,0
+maze1=[
+    [1,0,0,0],
+    [1,1,0,0],
+    [0,1,1,0],
+    [0,0,1,1]]
+maze2=[
+    [1,0,0,0,0,0], 
+    [1,1,1,1,0,0],
+    [0,0,0,1,0,0],
+    [0,1,1,1,1,0],
+    [0,1,0,0,0,0],
+    [0,1,1,1,1,1]]
+maze3 = [ 
+    [1,0,0,0,0,0,0,0,0],
+    [1,1,1,1,1,1,1,1,0],
+    [0,1,0,1,0,0,0,0,0],
+    [0,1,0,1,0,1,1,1,1],
+    [0,0,0,1,0,0,0,1,0],
+    [0,1,0,1,1,1,0,1,0],
+    [0,1,0,0,0,1,0,1,0],
+    [1,1,1,1,1,1,1,1,0],
+    [0,0,0,0,0,0,0,0,0]]
+if level==1:
+    maze=maze1
+elif level==2:
+    maze=maze2
+elif level==3:
+    maze=maze3
+print("Start The GAME...")
+for i in range(len(maze)):
+    for j in range(len(maze)):
+        if (i==0 and j==0):
+            print("🤓",end=" ")
+        else:
+            print("#",end=" ")
+    print()
+while True:
+    a=x
+    b=y
+    arrow=input("u/d/l/r:")
+    if arrow=="r":
+        b+=1
+    elif arrow=="l":
+        b-=1
+    elif arrow=="u":
+        a-=1
+    elif arrow=="d":
+        a+=1
+    else:
+        print("Invalid!")
+    if a<0 or b<0 or a>=len(maze) or b>=len(maze):
+        print("Out Of Bounds!🫠") 
+        print("Are U trying to get lost from my maze😒") 
+        print("But U can't go untill U find the way🤣") 
+        continue
+    if maze[a][b]==0:
+        print("you hit a wall🥲 (you are in the same position😅 )")
+        continue
+    x=a
+    y=b
+    if ((maze==maze3) and (x,y)==(3,8)) or ((maze==maze3) and (x,y)==(7,0)) or ((maze==maze2) and (x,y)==(5,5)) or ((maze==maze1) and (x,y)==(3,3)):
+        print("Good Job🥳 🥳 🥳 ")
+        break
+    for i in range(len(maze)):
+        for j in range(len(maze)):
+            if (i==x and j==y):
+                print("🤓",end=" ")
+            else:
+                print("#",end=" ")
+        print()
